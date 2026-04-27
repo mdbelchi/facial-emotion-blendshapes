@@ -2,8 +2,6 @@
 
 **End-to-end pipeline for anonymized facial emotion dataset creation and ML model training.**
 
-Built as part of a Master's thesis at Universidad Politécnica de Cartagena (Industria 4.0, 2024).
-
 ---
 
 ## 🔍 Overview
