@@ -168,14 +168,6 @@ Training on a personalized single-user dataset (~989 samples, 4 emotion classes)
 
 ---
 
-## 🔬 Context
-
-This project was developed as part of:
-- **Master's Thesis** — Máster Universitario en Industria 4.0, UPCT (2024)
-- **Research project** — Plataforma JUNO+ (TED2021-130942A-C22), Universidad Politécnica de Cartagena
-
----
-
 ## 👩‍💻 Author
 
 **María Dolores Belchí Martínez**  
