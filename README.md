@@ -188,4 +188,4 @@ Electronics Engineer | AI & Computer Vision
 
 ## 📄 License
 
-MIT License
+Apache License 2.0
