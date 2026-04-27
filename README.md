@@ -15,8 +15,14 @@ The solution consists of two complementary tools:
 | **Dataset Capture App** | Flask · MediaPipe · JavaScript | Real-time blendshape extraction via webcam → anonymized CSV dataset |
 | **ML Training App** | PyQt5 · TensorFlow · scikit-learn | Train, configure and evaluate ML models on blendshape datasets |
 
-![Capture app interface](img/app_formularios_blendshape_img.png)
-![Face mesh detection](img/malla_facial_img.png)
+**Dataset capture app — user form and emotion selection**
+
+<img src="img/app_formularios_blendshape_img.png" width="550"/>
+
+**Dataset capture app — MediaPipe face mesh in real time**
+
+<img src="img/malla_facial_img.png" width="550"/>
+
 ---
 
 ## 🔒 Privacy by Design
