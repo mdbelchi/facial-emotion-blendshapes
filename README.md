@@ -181,7 +181,7 @@ This project was developed as part of:
 ## 👩‍💻 Author
 
 **María Dolores Belchí Martínez**  
-Electronics Engineer | Computer Vision | AI Engineer  
+Electronics Engineer | AI & Computer Vision 
 [LinkedIn](https://www.linkedin.com/in/maría-dolores-belchí-martínez) · [GitHub](https://github.com/mdbelchi)
 
 ---
