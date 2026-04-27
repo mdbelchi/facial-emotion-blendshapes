@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Face Landmarker</title>
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Reconocimiento de rasgos faciales</h1>
+  <!-- formulario para recopilar la información del usuario -->
+  <form id="userInfoForm" class="text-center mb-4">
+      <div class="form-group row">
+        <label for="DatasetID" class="col-sm-3 col-form-label">ID Dataset:</label>
+        <div class= "col-sm-3">
+            <input type="text" class="form-control" id="DatasetID" name="DatasetID" required>
+        </div>
+      </div>
+      <div class="form-group row">
+          <label for="Identificador" class="col-sm-3 col-form-label">ID:</label>
+          <div class= "col-sm-3">
+              <input type="text" class="form-control" id="Identificador" name="Identificador" required>
+          </div>
+      </div>
+      <div class="form-group row">
+          <label for="Edad" class="col-sm-3 col-form-label">Edad:</label>
+          <div class="col-sm-3">
+              <input type="number" class="form-control" id="Edad" name="Edad" required>
+          </div>
+      </div>
+      <div class="form-group row">
+          <label for="Sexo" class="col-sm-3 col-form-label">Sexo:</label>
+          <div class="col-sm-3">
+              <select class="form-control" id="Sexo" name="Sexo" required>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+              </select>
+          </div>
+      </div>
+      <div class="form-group row">
+          <label for="Patologia" class="col-sm-3 col-form-label">Patología (Opcional):</label>
+          <div class="col-sm-3">
+              <select class="form-control" id="Patologia" name="Patologia">
+                  <option value="ninguna">Ninguna</option>
+                  <option value="Parkinson">Parkinson</option>
+                  <option value="Hipertensión">Hipertensión</option>
+                  <!-- añadimos más patologías  -->
+              </select>
+          </div>
+      </div>
+  </form>
+
+  <!-- activación de la cámara -->
+  <div class="text-center mb-4">
+      <button id="webcamButton" class="btn btn-primary mb-3">
+          <i class="fas fa-video"></i> Activar cámara
+      </button>
+  </div>
+    <!-- botones de cada emoción -->
+  <div id="emotionButtons" class="text-center">
+      <button class="btn btn-success emotionButton m-1" data-emotion="Feliz">
+          <i class="fas fa-smile"></i> Feliz
+      </button>
+      <button class="btn btn-secondary emotionButton m-1" data-emotion="Triste">
+          <i class="fas fa-frown"></i> Triste
+      </button>
+      <button class="btn btn-danger emotionButton m-1" data-emotion="Enfadado">
+          <i class="fas fa-angry"></i> Enfadado
+      </button>
+      <button class="btn btn-warning emotionButton m-1" data-emotion="Neutral">
+          <i class="fas fa-meh"></i> Neutral
+      </button>
+      <!-- temporizador de la detección -->
+      <div id="timer" class="text-center mt-3" style="font-size: 1.5rem; color: red;"></div>
+  </div>
+
+  <!-- vista de la cámara -->
+  <div id="liveView" class="text-center mb-4">
+    <div style="position: relative; display: inline-block;">
+        <video id="webcam" class="border rounded" style="width: 100%; max-width: 640px;" autoplay playsinline></video>
+        <canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
+    </div>
+</div>
+
+  <!-- mostrar los valores Blendshape -->
+  <div class="blend-shapes">
+    <ul class="blend-shapes-list" id="video-blend-shapes"></ul>
+  </div>
+
+  <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
